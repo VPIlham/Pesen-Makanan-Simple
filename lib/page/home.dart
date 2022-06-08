@@ -11,23 +11,24 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xfffEDEDED),
-      body: SingleChildScrollView(
-        child: SafeArea(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              HeaderPage(),
-              SizedBox(
-                height: 10,
-              ),
-              MakananWidget(),
-              SizedBox(
-                height: 10,
-              ),
-              TestimoniWidget(),
-            ],
+      body: Stack(
+        children: [
+          SafeArea(
+            child: ListView(
+              children: [
+                HeaderPage(),
+                SizedBox(
+                  height: 10,
+                ),
+                MakananWidget(),
+                SizedBox(
+                  height: 10,
+                ),
+                TestimoniWidget(),
+              ],
+            ),
           ),
-        ),
+        ],
       ),
     );
   }

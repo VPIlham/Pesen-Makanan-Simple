@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:makanan_app/models/testimoni.dart';
-import 'package:makanan_app/page/detail.dart';
 import 'package:makanan_app/theme/style.dart';
 
 class TestimoniWidget extends StatelessWidget {
@@ -22,7 +21,7 @@ class TestimoniWidget extends StatelessWidget {
           height: 400,
           margin: EdgeInsets.symmetric(horizontal: mDefault),
           child: ListView.separated(
-            physics: const AlwaysScrollableScrollPhysics(),
+            physics: NeverScrollableScrollPhysics(),
             separatorBuilder: (_, index) => SizedBox(
               height: 5,
             ),
@@ -49,34 +48,40 @@ class TestimoniWidget extends StatelessWidget {
                 ),
                 child: Row(
                   children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(50),
-                      child: Image.network(
-                        testimoni[index].img,
-                        height: 80,
-                        width: 80,
+                    Expanded(
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(50),
+                        child: Image.network(
+                          testimoni[index].img,
+                          height: 80,
+                          width: 80,
+                        ),
                       ),
                     ),
                     SizedBox(
                       width: 15,
                     ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          testimoni[index].nama,
-                          style: TitleTextStyle.copyWith(fontSize: 12),
-                        ),
-                        Container(
-                          width: 200,
-                          child: Text(
-                            testimoni[index].desc,
-                            maxLines: 4,
-                            style: TextStyle(
-                                fontSize: 10, overflow: TextOverflow.ellipsis),
+                    Expanded(
+                      flex: 2,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            testimoni[index].nama,
+                            style: TitleTextStyle.copyWith(fontSize: 12),
                           ),
-                        ),
-                      ],
+                          Container(
+                            width: 200,
+                            child: Text(
+                              testimoni[index].desc,
+                              maxLines: 4,
+                              style: TextStyle(
+                                  fontSize: 10,
+                                  overflow: TextOverflow.ellipsis),
+                            ),
+                          ),
+                        ],
+                      ),
                     )
                   ],
                 ),

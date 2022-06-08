@@ -33,7 +33,7 @@ class Testimoni {
           desc:
               "Aku coba macem-macem katering, tapi akhirnya aku suka aplikasi ini",
           img:
-              'https://i.pinimg.com/originals/4b/97/ca/4b97ca95a5c473657c1900945723aa21.jpg'),
+              'https://cdn.dribbble.com/users/19849/screenshots/5732025/media/00b5f04fc339a8206ec98fecf49184d8.png?compress=1&resize=400x300&vertical=top'),
     ];
   }
 }
